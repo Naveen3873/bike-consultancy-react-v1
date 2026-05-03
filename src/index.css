@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    background-color: #0a0a0f;
+    color: #e8e8f0;
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #111118; }
+  ::-webkit-scrollbar-thumb { background: #3d3d52; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #f97316; }
+}
+
+@layer components {
+  .card {
+    @apply bg-dark-800 border border-dark-600 rounded-2xl;
+  }
+  .card-hover {
+    @apply card transition-all duration-300 hover:border-brand-500/40 hover:shadow-lg hover:shadow-brand-500/5;
+  }
+  .btn-primary {
+    @apply bg-brand-500 hover:bg-brand-600 text-white font-heading font-semibold tracking-wide px-5 py-2.5 rounded-xl transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-dark-700 hover:bg-dark-600 text-dark-100 font-heading font-semibold tracking-wide px-5 py-2.5 rounded-xl border border-dark-500 transition-all duration-200 active:scale-95;
+  }
+  .btn-ghost {
+    @apply text-dark-200 hover:text-white hover:bg-dark-700 px-4 py-2 rounded-xl transition-all duration-200;
+  }
+  .input-field {
+    @apply w-full bg-dark-700 border border-dark-500 rounded-xl px-4 py-3 text-white placeholder-dark-300 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30 transition-all duration-200 text-sm;
+  }
+  .label {
+    @apply block text-xs font-heading font-semibold text-dark-200 uppercase tracking-widest mb-1.5;
+  }
+  .badge-available { @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/20; }
+  .badge-pending { @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/15 text-amber-400 border border-amber-500/20; }
+  .badge-sold { @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-500/15 text-blue-400 border border-blue-500/20; }
+  .stat-card {
+    @apply card p-5 flex flex-col gap-3;
+  }
+  .page-title {
+    @apply font-display text-4xl text-white tracking-wide;
+  }
+  .section-title {
+    @apply font-heading font-semibold text-xl text-white tracking-wide;
+  }
+}
+
+.shimmer-line {
+  background: linear-gradient(90deg, #1a1a24 25%, #242432 50%, #1a1a24 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Orange glow accent */
+.glow-orange {
+  box-shadow: 0 0 30px rgba(249, 115, 22, 0.15);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #f97316, #fb923c, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
